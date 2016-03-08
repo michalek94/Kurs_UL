@@ -6,9 +6,13 @@
 	}
 
 	mapArray = function (array, callback, ctx) {
-        var newArr = [];
+        var newArr = [10,11,12];
         
         // add code for maping
+        for (var i = 0, len = newArr.length; i < len; i++) {
+            console.log(newArr[i]);
+         
+        }
         
         return newArr;
 	};
