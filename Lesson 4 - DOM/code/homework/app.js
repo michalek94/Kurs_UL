@@ -1,8 +1,11 @@
-(function() {
+window.addEventListener('DOMContentLoaded', function () {
 
     //Create area and ship as `div` in `document` node
-    var playArea = {}, // ??
-        ship = {}; // ??
+    var playArea = document.createElement('div');
+    //playArea.setAttribute('class', 'playArea');
+    var ship = document.createElement('div');
+    //ship.setAttribute('class', 'ship');
+     
 
     var key = {
         right: false,
@@ -20,14 +23,14 @@
         shipSpeed = 4;
 
     // Add player area and ship element at the end of `document.body` element
-
-    // ??
-    // ??
+    
+    document.body.appendChild(playArea);
+    document.body.appendChild(ship);
 
     // Add CSS classes accordingly ( player -> player, playArea -> playArea)
 
-    // ??
-    // ??
+    playArea.setAttribute('class', 'playArea');
+    ship.setAttribute('class', 'ship');
 
     //move mechanics
     shipPos.x = (playArea.offsetWidth / 2 + playArea.offsetLeft) - (ship.offsetWidth / 2);
@@ -51,6 +54,7 @@
         } else if (e.keyCode === 40) {
             key.down = true;
         }
+        
     }
 
     function keyUp(e) {
@@ -64,6 +68,7 @@
         } else if (e.keyCode === 40) {
             key.down = false;
         }
+        
     }
 
     // main 
@@ -98,10 +103,10 @@
 
     // add event listeners observers for both `keydown` and `keyup` events
     // using 'keydown' and 'keyup' functions provided above
-
-    // ??
-    // ??
-
+    
+    document.addEventListener("keydown", keyDown, false);
+    document.addEventListener("keyup", keyUp, false);
+    
     // Main game loop
     function loop() {
         moveShip();
@@ -110,7 +115,7 @@
 
     loop();
 
-})();
+});
 
 // Resources
 // https://developer.mozilla.org/pl/docs/Web/API/Document/createElement
