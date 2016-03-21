@@ -6,14 +6,18 @@
 	}
 
 	mapArray = function (array, callback, ctx) {
-        var newArr = [10,11,12];
+        var newArr = [];
         
         // add code for maping
-        for (var i = 0, len = newArr.length; i < len; i++) {
-            console.log(newArr[i]);
-         
+        if(typeof ctx == "undefined"){
+            array.forEach(function(arrElement, index, array){
+                newArr.push(callback(arrElement, index, array));
+            });
+        }else{
+            array.forEach(function(arrElement, index, array){
+               newArr.push(callback.bind(ctx)(arrElement, index, array)) 
+            });
         }
-        
         return newArr;
 	};
 

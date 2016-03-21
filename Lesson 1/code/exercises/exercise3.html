@@ -115,17 +115,17 @@
         function printVip() {
             var free = '', borrowed = '';
 
-             library.vip.filter(function(el) {
-                 return !el.isBorrowed;
-             }).forEach(function(el) {
-                 free += el.title + ', ';
-             });
+            library.vip.filter(function(el) {
+                return !el.isBorrowed;
+            }).forEach(function(el) {
+                free += el.title + ', ';
+            });
              
-             library.vip.filter(function(el) {
-                 return el.isBorrowed;
-             }).forEach(function(el) {
-                 borrowed += el.title + ', ';
-             });
+            library.vip.filter(function(el) {
+                return el.isBorrowed;
+            }).forEach(function(el) {
+                borrowed += el.title + ', ';
+            });
             
             document.getElementById("vipFreeLabel").innerHTML = free;
             document.getElementById("vipBorrowedLabel").innerHTML = borrowed;
