@@ -39,24 +39,53 @@
     <script type="text/javascript">
         
         var arr = [];
+        var n;
         
         function countBoolean() {
-            //!!!!!!!!!
-            return 0;
+            n = 0;
+            
+            arr.forEach(function(booleans){
+                if(typeof booleans == "boolean"){
+                    n++;
+                }
+            });
+            return n; 
+            return 0;         
         }
         
         function countNumber() {
-            //!!!!!!!!!
+            n = 0;
+            
+            arr.forEach(function(numbers){
+                if(typeof numbers == "number"){
+                    n++
+                }
+            });
+            return n; 
             return 0;
         }
         
         function countString() {
-            //!!!!!!!!!
+            n = 0;
+            
+            arr.forEach(function(strings){
+                if(typeof strings == "string"){
+                    n++;
+                }
+            });
+            return n;
             return 0;
         }
         
         function countFalsy() {
-            //!!!!!!!!!
+            n = 0;
+            
+            arr.forEach(function(falsies){
+                if(!falsies){
+                    n++;
+                }
+            })
+            return n;
             return 0;
         }
         

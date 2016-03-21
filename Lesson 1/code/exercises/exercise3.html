@@ -60,35 +60,72 @@
         
         
         function addStandardBook(title) {
-            //!!!!!!!!!
+            if(title.length > 0){
+                library.standards.push({
+                    title: title,
+                    isBorrowed: false
+                });
+            }
         }
         
         function addVipBook(title) {
-            //!!!!!!!!!
+            if(title.length > 0){
+                library.vip.push({
+                    title: title,
+                    isBorrowed: false
+                });
+            }
         }
         
         function borrowStandardBook(title) {
-            //!!!!!!!!!
+            for(var i=0; i<library.standards.length; i++) {
+                 if(library.standards[i].title == title && library.standards[i].isBorrowed == false) {
+                     library.standards[i].isBorrowed = true;
+                 }
+             }
         }
         
         function borrowVipBook(title) {
-            //!!!!!!!!!
-        }
-        
+            for(var i=0; i<library.vip.length; i++) {
+                 if(library.vip[i].title == title && library.vip[i].isBorrowed == false) {
+                     library.vip[i].isBorrowed = true;
+                 }
+             }
+        }        
         
         function printStandards() {
-            var free = 's', borrowed = 'sb';
-            
-            //!!!!!!!!!
+             var free = '', borrowed = '';
+
+             library.standards.filter(function(el) {
+                 return !el.isBorrowed;
+             }).forEach(function(el) {
+                 free += el.title + ', ';
+             });
+             
+             library.standards.filter(function(el) {
+                 return el.isBorrowed;
+             }).forEach(function(el) {
+                 borrowed += el.title + ', ';
+             });
             
             document.getElementById("standardFreeLabel").innerHTML = free;
             document.getElementById("standardBorrowedLabel").innerHTML = borrowed;
         }
         
         function printVip() {
-            var free = 'v', borrowed = 'vb';
-            
-            //!!!!!!!!!
+            var free = '', borrowed = '';
+
+             library.vip.filter(function(el) {
+                 return !el.isBorrowed;
+             }).forEach(function(el) {
+                 free += el.title + ', ';
+             });
+             
+             library.vip.filter(function(el) {
+                 return el.isBorrowed;
+             }).forEach(function(el) {
+                 borrowed += el.title + ', ';
+             });
             
             document.getElementById("vipFreeLabel").innerHTML = free;
             document.getElementById("vipBorrowedLabel").innerHTML = borrowed;
