@@ -4,7 +4,7 @@
     var Animal = {
         eaten: [],
         eat: function (obj) {
-            if(this.eaten.some(function(el) {
+            if(this.eaten.forEach(function(el) {
                 return Object.getPrototypeOf(obj) == Object.getPrototypeOf(el);
             })){
                 return "Mniam!";
