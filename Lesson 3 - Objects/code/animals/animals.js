@@ -2,9 +2,9 @@
 	var Cat = null, Bird = null, Worm = null;
     
     var Animal = {
-        eaten: [],
         eat: function (obj) {
-            if(this.eaten.forEach(function(el) {
+            
+            if(this.eaten.some(function(el){
                 return Object.getPrototypeOf(obj) == Object.getPrototypeOf(el);
             })){
                 return "Mniam!";
@@ -19,10 +19,16 @@
 	}
     
     Worm = Object.create(Animal);
+    Worm.eaten = [];
+    
     Bird = Object.create(Animal);
-    Bird.eaten = [Worm];
+    Bird.eaten = [];
+    
     Cat = Object.create(Animal);
-    Cat.eaten = [Bird];
+    Cat.eaten = [];    
+    
+    Cat.eaten.push(Object.create(Bird));
+    Bird.eaten.push(Object.create(Worm));
 
 	global.UAM.Cat = Cat;
 	global.UAM.Bird = Bird;

@@ -3,7 +3,18 @@
 		global.UAM = {};
 	}
 
-	function newObject() {}
+	function newObject(constructor) {
+       
+            var argument = Array.prototype.slice.call(arguments, 1);
+            var newObject = Object.create(constructor.prototype);
+            var objectConstructor = constructor.apply(newObject, argument); 
+            
+            if(objectConstructor){
+                newObject = objectConstructor;
+            }        
+        
+            return newObject;        
+    }
 
 	global.UAM.newObject = newObject;
 }(window));
