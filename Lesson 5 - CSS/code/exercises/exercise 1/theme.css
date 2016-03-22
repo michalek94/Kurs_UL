@@ -71,7 +71,7 @@
     background: url("cat.jpg") no-repeat;
     background-size: 55px;
     display: inline-block;
-    content: "";
+    content: '';
     padding: 60px 60px 0px 0px;
     vertical-align: text-bottom;
 }
