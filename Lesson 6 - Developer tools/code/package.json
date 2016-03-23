@@ -1,0 +1,26 @@
+{
+  "name": "code",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michalek94/Kurs_UL.git"
+  },
+  "author": "Michsał Pankowski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michalek94/Kurs_UL/issues"
+  },
+  "homepage": "https://github.com/michalek94/Kurs_UL#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "jquery": "^2.2.2",
+    "lodash": "^4.6.1"
+  }
+}
