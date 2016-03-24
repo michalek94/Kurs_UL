@@ -30,8 +30,9 @@ app.get('/numbers', function (req, res) {
     setTimeout(function () {
         if(numbers.length === 0){
             res.send("empty");
+        }else{
+            res.send(numbers.join(", "));
         }
-        res.send(numbers.join(", "));
     }, 1000);
 });
 //DELETE /numbers should empty numbers array
