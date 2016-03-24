@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
         span.textContent = 'working...';
         makeQuery('get', '/numbers', function (numbers) {
             clearAllSpans();
-            span.textContent = 'Numbers are ' + numbers;
+            span.textContent = 'Numbers are: ' + numbers;
         });
     });
 });

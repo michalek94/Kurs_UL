@@ -28,6 +28,9 @@ app.post('/numbers', function (req, res) {
 //GET /numbers should return comma separated list of numbers
 app.get('/numbers', function (req, res) {
     setTimeout(function () {
+        if(numbers.length === 0){
+            res.send("empty");
+        }
         res.send(numbers.join(", "));
     }, 1000);
 });
