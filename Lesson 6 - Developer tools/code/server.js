@@ -44,6 +44,37 @@ app.delete('/numbers', function (req, res) {
 // available operations are sum, difference, multiplication, division
 // return result as strings
 app.get('/numbers/:op', function (req, res) {
+    setTimeout(function () {
+        switch(req.params.op){
+            case 'sum':
+                var sum = numbers.reduce(function (a,b) {
+                    return a + b;
+                });
+                res.send(sum.toString());            
+                break;
+            case 'difference':
+                var difference = numbers.slice(function (a,b) {
+                    return a - b; 
+                });
+                res.send(difference.toString());
+                break;
+            case 'multiplication':
+                var multiplication = numbers.reduce(function (a,b) {
+                    return a * b;
+                });
+                res.send(multiplication.toString());
+                break;
+            case 'division':
+                var division = numbers.slice(1).reduce(function (a,b) {
+                    return a / b;
+                });
+                res.send(division.toString());
+                break;
+            default: 
+                res.send("Operation is unsupported");
+        }
+        
+    }, 1000);
     
 });
 
