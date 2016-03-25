@@ -53,7 +53,7 @@ app.get('/numbers/:op', function (req, res) {
                 res.send(sum.toString());            
                 break;
             case 'difference':
-                var difference = numbers.slice(function (a,b) {
+                var difference = numbers.slice(0).reduce(function (a,b) {
                     return a - b; 
                 });
                 res.send(difference.toString());
@@ -65,17 +65,15 @@ app.get('/numbers/:op', function (req, res) {
                 res.send(multiplication.toString());
                 break;
             case 'division':
-                var division = numbers.slice(1).reduce(function (a,b) {
+                var division = numbers.slice(0).reduce(function (a,b) {
                     return a / b;
                 });
                 res.send(division.toString());
                 break;
             default: 
-                res.send("Operation is unsupported");
-        }
-        
-    }, 1000);
-    
+                res.send("Operation is unsupported");           
+        }       
+    }, 1000);    
 });
 
 app.listen(8080, function () {
