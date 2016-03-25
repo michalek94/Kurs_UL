@@ -22,7 +22,7 @@ app.get('/today', function (req, res) {
 
 //POST /numbers should save number for later
 app.post('/numbers', function (req, res) {
-    numbers.push(req.body);
+    numbers.push(+req.body);
     res.send("Number saved for later");           
 });
 //GET /numbers should return comma separated list of numbers
