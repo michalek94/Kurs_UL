@@ -8,8 +8,8 @@ var path = {
 
 gulp.task('jshint', function () {
     gulp.src(path.scripts)
-         .pipe(gulp_jshint('.jshintrc'))
-         .pipe(gulp_jshint.reporter('default'));
+        .pipe(gulp_jshint('.jshintrc'))
+        .pipe(gulp_jshint.reporter('default'));
 });
 
 gulp.task('concat', function () {
